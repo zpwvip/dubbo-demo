@@ -1,0 +1,20 @@
+dubbo:
+  application:  #当前服务/应用的名字
+    name: demo-provider
+  registry: #注册中心的协议和地址
+    protocol: zookeeper
+    port: 2181
+    address: 127.0.0.1
+  protocol: #通信规则（通信协议和接口）
+    name: dubbo
+    port: 20880
+  monitor: #连接监控中心
+    address: registry
+  #scan: #开启包扫描，可替代 @EnableDubbo 注解
+    #base-packages: demo
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/data?zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
